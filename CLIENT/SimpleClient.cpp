@@ -59,6 +59,7 @@ int main(int argc, char* argv[]) {
 	}
 	
 	string typing;
+	string prev;
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 		ClearBackground(GRAY);
@@ -76,7 +77,6 @@ int main(int argc, char* argv[]) {
 		if(typing.size() > 0){
 			if(IsKeyPressed(KEY_BACKSPACE)) typing.pop_back();
 			else if (IsKeyPressed(KEY_ENTER)){
-				typing=pseudo+": "+typing;
 				int bytesSent = SDLNet_TCP_Send(clientSocket, typing.c_str(), typing.length() + 1);
 				if (bytesSent < typing.length() + 1) {
 					cerr << "SDLNet TCP Send error2: " << SDLNet_GetError() << endl;
@@ -84,24 +84,15 @@ int main(int argc, char* argv[]) {
 					SDLNet_Quit();
 					return 1;
 				}
+				if(typing=="EXIT-CHAT"){
+					SDLNet_TCP_Close(clientSocket);
+					SDLNet_Quit();
+					return 0;
+				}
 
 				cout << "Sent " << bytesSent << " bytes to the server !" << std::endl;
 
-				SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
-				SDLNet_AddSocket(socketSet, reinterpret_cast<SDLNet_GenericSocket>(clientSocket));
-				if (SDLNet_CheckSockets(socketSet, 0) != 0){
-					char buffer[1024];
-					int bytesRead = SDLNet_TCP_Recv(clientSocket, buffer, sizeof(buffer));
-					if (bytesRead <= 0) {
-						cerr << "SDLNet TCP Recv error1: " << SDLNet_GetError() << endl;
-						SDLNet_TCP_Close(clientSocket);
-						SDLNet_Quit();
-						return 1;
-					}
-				}
-
-				//cout << "Incoming response: " << buffer << endl;
-				mLog.push_back(Message{true, typing});
+				prev = typing;
 				typing.clear();
 			}
 
@@ -113,13 +104,16 @@ int main(int argc, char* argv[]) {
 		if (SDLNet_CheckSockets(socketSet, 0) != 0){
 			char recBuffer[1024];
 			int bytesRead = SDLNet_TCP_Recv(clientSocket, recBuffer, sizeof(recBuffer));
-			if (bytesRead <= 0) {
-				cerr << "SDLNet TCP Recv error2: " << SDLNet_GetError() << endl;
+			auto err = SDLNet_GetError();
+			if (std::strlen(err)>0) {
+				cerr << "SDLNet TCP Recv error: " << err << endl;
 				SDLNet_TCP_Close(clientSocket);
 				SDLNet_Quit();
 				return 1;
 			}
-			mLog.push_back(Message{false, string(recBuffer)});
+			mLog.push_back(Message{(string(recBuffer)==pseudo+": "+prev), string(recBuffer)});
+			if(mLog.size()==19)mLog.erase(mLog.begin());
+			if(string(recBuffer)==pseudo+": "+prev) prev.clear();
 		}
 
 		//cout << "Incoming response: " << buffer << endl;
