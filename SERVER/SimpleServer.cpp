@@ -4,6 +4,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include "raylib.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {

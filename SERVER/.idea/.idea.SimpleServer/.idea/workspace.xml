@@ -9,18 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f35fe942-dee7-4ef2-8207-602f1d0ed5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../CLIENT/.idea/.idea.SimpleClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/.idea/.idea.SimpleClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLIENT/SimpleClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/SimpleClient.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLIENT/x64/Debug/SimpleClient.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/x64/Debug/SimpleClient.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLIENT/x64/Debug/SimpleClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/x64/Debug/SimpleClient.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLIENT/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/x64/Debug/vc143.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLIENT/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CLIENT/x64/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SimpleServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SimpleServer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetworkingBaseProject.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/NetworkingBaseProject.vcxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SimpleServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleServer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/SimpleServer.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/SimpleServer.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/SimpleServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/SimpleServer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/SimpleServer.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/SimpleServer.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/vc143.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/vc143.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,9 +180,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\ewan.kergomard\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ewan.kergomard\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\ewan.kergomard\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\ewan3\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\ewan3\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\ewan3\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -257,7 +248,8 @@
       <updated>1714378247528</updated>
       <workItem from="1714378248623" duration="16000" />
       <workItem from="1714461051786" duration="5745000" />
-      <workItem from="1714637577509" duration="5907000" />
+      <workItem from="1714637577509" duration="6153000" />
+      <workItem from="1714732296525" duration="113000" />
     </task>
     <servers />
   </component>
@@ -272,7 +264,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/SimpleServer.cpp</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
